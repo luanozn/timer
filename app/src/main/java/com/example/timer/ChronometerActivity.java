@@ -24,19 +24,20 @@ public class ChronometerActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chronometer);
 
-        System.out.println("onCreate");
+        Button startStopButton = findViewById(R.id.startStopButton);
+        Button zeroButton = findViewById(R.id.resetButton);
 
         if (savedInstanceState == null) {
             currentState = ButtonState.STOPPED;
             seconds = 0;
         } else {
-            currentState = ButtonState.from(String.valueOf(savedInstanceState.get("state")));
+            currentState = ButtonState.from(savedInstanceState.getString("state"));
+            seconds = savedInstanceState.getInt("seconds");
+            startStopButton.setText(currentState.getMessage());
         }
 
         TextView chronoTime = findViewById(R.id.chronoTime);
 
-        Button startStopButton = findViewById(R.id.startStopButton);
-        Button zeroButton = findViewById(R.id.resetButton);
 
         startStopButton.setOnClickListener(view -> {
             switch (currentState) {
@@ -81,6 +82,11 @@ public class ChronometerActivity extends AppCompatActivity{
         });
     }
 
-    
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("seconds", seconds);
+        savedInstanceState.putString("state", String.valueOf(currentState));
+    }
 
 }

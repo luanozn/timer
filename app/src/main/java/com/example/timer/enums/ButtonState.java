@@ -14,8 +14,8 @@ public enum ButtonState {
 
     public static ButtonState from(String state) {
         switch (state){
-            case "start": return STOPPED;
-            case "stop": return RUNNING;
+            case "STOPPED": return STOPPED;
+            case "RUNNING": return RUNNING;
             default: return UNDEFINED;
         }
     }
