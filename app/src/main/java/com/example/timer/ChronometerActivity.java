@@ -3,16 +3,20 @@ package com.example.timer;
 import static com.example.timer.enums.ButtonState.STOPPED;
 import static com.example.timer.enums.ButtonState.RUNNING;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.timer.enums.ButtonState;
 
 import java.util.Locale;
+import java.util.Objects;
 
 public class ChronometerActivity extends AppCompatActivity{
 
@@ -23,6 +27,9 @@ public class ChronometerActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chronometer);
+
+        ActionBar actionBar = getSupportActionBar();
+        Objects.requireNonNull(actionBar).setDisplayHomeAsUpEnabled(true);
 
         Button startStopButton = findViewById(R.id.startStopButton);
         Button zeroButton = findViewById(R.id.resetButton);
@@ -83,10 +90,15 @@ public class ChronometerActivity extends AppCompatActivity{
     }
 
     @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
+    public void onSaveInstanceState(@NonNull Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putInt("seconds", seconds);
         savedInstanceState.putString("state", String.valueOf(currentState));
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return true;
     }
 
 }
