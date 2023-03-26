@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Timer</string>
+    <string name="app_name">Cronômetro / Timer</string>
     <string name="chronometer_button">Cronômetro</string>
     <string name="timer_button">Temporizador</string>
     <string name="hh_mm_ss">00:00:00</string>

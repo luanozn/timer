@@ -4,19 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:foregroundTint="#FB0000"
     tools:context=".ChronometerActivity">
 
     <TextView
         android:id="@+id/chronoTime"
         android:layout_width="285dp"
         android:layout_height="89dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="228dp"
+        android:backgroundTint="@color/light_green"
+        android:gravity="center"
         android:text="@string/hh_mm_ss"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="60sp"
-        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,12 +28,10 @@
         android:id="@+id/startStopButton"
         android:layout_width="175dp"
         android:layout_height="63dp"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="118dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/avocado"
         android:text="@string/start"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chronoTime" />
 
@@ -38,14 +39,11 @@
         android:id="@+id/resetButton"
         android:layout_width="175dp"
         android:layout_height="63dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginEnd="125dp"
-        android:layout_marginBottom="266dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="150dp"
         android:backgroundTint="@color/avocado"
         android:text="@string/zero"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/chronoTime" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
