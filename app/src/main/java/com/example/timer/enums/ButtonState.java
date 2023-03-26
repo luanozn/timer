@@ -2,25 +2,25 @@ package com.example.timer.enums;
 
 public enum ButtonState {
 
-    START("Iniciar"),
-    STOP("Parar"),
+    STOPPED("Iniciar"),
+    RUNNING("Parar"),
     UNDEFINED("Undefined");
 
-    private final String state;
+    private final String message;
 
     ButtonState(String state) {
-        this.state = state;
+        this.message = state;
     }
 
     public static ButtonState from(String state) {
         switch (state){
-            case "start": return START;
-            case "stop": return STOP;
+            case "start": return STOPPED;
+            case "stop": return RUNNING;
             default: return UNDEFINED;
         }
     }
 
-    public String getState() {
-        return state;
+    public String getMessage() {
+        return message;
     }
 }
