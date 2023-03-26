@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChronometerActivity">
+
+    <TextView
+        android:id="@+id/chronoTime"
+        android:layout_width="285dp"
+        android:layout_height="89dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="64dp"
+        android:text="@string/hh_mm_ss"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="60sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/startStopButton"
+        android:layout_width="175dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="118dp"
+        android:backgroundTint="@color/avocado"
+        android:text="@string/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chronoTime" />
+
+    <Button
+        android:id="@+id/zeroButton"
+        android:layout_width="175dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="118dp"
+        android:backgroundTint="@color/avocado"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startStopButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
